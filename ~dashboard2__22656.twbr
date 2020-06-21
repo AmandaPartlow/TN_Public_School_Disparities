@@ -1,0 +1,1924 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0518.1719                               -->
+<workbook source-build='2020.1.4 (20201.20.0518.1719)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <SheetIdentifierTracking />
+    <SpatialFileLayer />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='elem_zones_scores_gdf' inline='true' name='federated.1p8y93b0tdn8ng13ojxi012yy595' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='elem_zones_scores_gdf' name='ogrdirect.1kjwzyb0xbh5mo11pm0mg1h7j6bz'>
+            <connection class='ogrdirect' directory='C:/Users/amand/Documents/NSS_Data_Analytics/GitHub/TN_Public_School_Disparities/data/final_data' filename='elem_zones_scores_gdf.geojson' ogr-grid-shift-folder='C:\Program Files\Tableau\Tableau 2020.1\local\proj4' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='ogrdirect.1kjwzyb0xbh5mo11pm0mg1h7j6bz' name='elem_zones_scores_gdf.geojson' table='[elem_zones_scores_gdf.geojson]' type='table'>
+          <columns>
+            <column datatype='string' name='school' ordinal='0' />
+            <column datatype='real' name='achievement_score' ordinal='1' />
+            <column datatype='real' name='growth_score' ordinal='2' />
+            <column datatype='real' name='chronically_out_of_school_score' ordinal='3' />
+            <column datatype='spatial' name='Geometry' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>school</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>school</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>achievement_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[achievement_score]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>achievement_score</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>growth_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[growth_score]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>growth_score</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>chronically_out_of_school_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[chronically_out_of_school_score]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>chronically_out_of_school_score</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Achievement Score' datatype='real' name='[achievement_score]' role='measure' type='quantitative' />
+      <column caption='Chronically Out Of School Score' datatype='real' name='[chronically_out_of_school_score]' role='measure' type='quantitative' />
+      <column caption='Growth Score' datatype='real' name='[growth_score]' role='measure' type='quantitative' />
+      <column caption='School' datatype='string' name='[school]' role='dimension' type='nominal' />
+      <drill-paths>
+        <drill-path name='state, county' />
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.368866' measure-ordering='alphabetic' measure-percentage='0.631134' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='demog_gdf' inline='true' name='federated.1d50h9g0p4ghwb0zn4k9305oyp0h' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='demog_gdf' name='ogrdirect.0t9fv4o1tlpw8a1aha9vx0ukm2ct'>
+            <connection class='ogrdirect' directory='C:/Users/amand/Documents/NSS_Data_Analytics/GitHub/TN_Public_School_Disparities/data/final_data' filename='demog_gdf.geojson' ogr-grid-shift-folder='C:\Program Files\Tableau\Tableau 2020.1\local\proj4' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='ogrdirect.0t9fv4o1tlpw8a1aha9vx0ukm2ct' name='demog_gdf.geojson' table='[demog_gdf.geojson]' type='table'>
+          <columns>
+            <column datatype='string' name='census_block_group' ordinal='0' />
+            <column datatype='real' name='income_per_cap' ordinal='1' />
+            <column datatype='integer' name='total_block_pop' ordinal='2' />
+            <column datatype='integer' name='white' ordinal='3' />
+            <column datatype='integer' name='black' ordinal='4' />
+            <column datatype='integer' name='nat_american_nat_alaskan' ordinal='5' />
+            <column datatype='integer' name='asian' ordinal='6' />
+            <column datatype='integer' name='pac_islander_nat_hawaiian' ordinal='7' />
+            <column datatype='integer' name='other' ordinal='8' />
+            <column datatype='integer' name='more_than_one_race' ordinal='9' />
+            <column datatype='integer' name='hispanic' ordinal='10' />
+            <column datatype='real' name='%white' ordinal='11' />
+            <column datatype='real' name='%black' ordinal='12' />
+            <column datatype='real' name='%hisp' ordinal='13' />
+            <column datatype='real' name='%non-white' ordinal='14' />
+            <column datatype='integer' name='hh_income_&lt;10,000' ordinal='15' />
+            <column datatype='integer' name='hh_income_10,000-14,999' ordinal='16' />
+            <column datatype='integer' name='hh_income_15,000-19,999' ordinal='17' />
+            <column datatype='integer' name='hh_income_20,000-24,999' ordinal='18' />
+            <column datatype='integer' name='hh_income_25,000-29,999' ordinal='19' />
+            <column datatype='integer' name='hh_income_30,000-34,999' ordinal='20' />
+            <column datatype='integer' name='hh_income_35,000-39,999' ordinal='21' />
+            <column datatype='integer' name='hh_income_40,000-44,999' ordinal='22' />
+            <column datatype='integer' name='hh_income_45,000-49,999' ordinal='23' />
+            <column datatype='integer' name='hh_income_50,000-59,999' ordinal='24' />
+            <column datatype='integer' name='hh_income_60,000-74,999' ordinal='25' />
+            <column datatype='integer' name='hh_income_75,000-99,999' ordinal='26' />
+            <column datatype='integer' name='hh_income_100,000-124,999' ordinal='27' />
+            <column datatype='integer' name='hh_income_125,000-149,999' ordinal='28' />
+            <column datatype='integer' name='hh_income_150,000-199,999' ordinal='29' />
+            <column datatype='integer' name='hh_income_200,000+' ordinal='30' />
+            <column datatype='string' name='state' ordinal='31' />
+            <column datatype='string' name='county' ordinal='32' />
+            <column datatype='spatial' name='Geometry' ordinal='33' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>census_block_group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[census_block_group]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>census_block_group</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>income_per_cap</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[income_per_cap]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>income_per_cap</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_block_pop</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[total_block_pop]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>total_block_pop</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>white</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[white]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>white</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>black</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[black]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>black</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nat_american_nat_alaskan</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[nat_american_nat_alaskan]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>nat_american_nat_alaskan</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>asian</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[asian]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>asian</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pac_islander_nat_hawaiian</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[pac_islander_nat_hawaiian]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>pac_islander_nat_hawaiian</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>other</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[other]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>other</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>more_than_one_race</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[more_than_one_race]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>more_than_one_race</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hispanic</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hispanic]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hispanic</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%white</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%white]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>%white</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%black</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%black]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>%black</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%hisp</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%hisp]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>%hisp</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%non-white</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%non-white]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>%non-white</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_&lt;10,000</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_&lt;10,000]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_&lt;10,000</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_10,000-14,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_10,000-14,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_10,000-14,999</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_15,000-19,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_15,000-19,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_15,000-19,999</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_20,000-24,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_20,000-24,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_20,000-24,999</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_25,000-29,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_25,000-29,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_25,000-29,999</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_30,000-34,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_30,000-34,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_30,000-34,999</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_35,000-39,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_35,000-39,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_35,000-39,999</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_40,000-44,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_40,000-44,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_40,000-44,999</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_45,000-49,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_45,000-49,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_45,000-49,999</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_50,000-59,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_50,000-59,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_50,000-59,999</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_60,000-74,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_60,000-74,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_60,000-74,999</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_75,000-99,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_75,000-99,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_75,000-99,999</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_100,000-124,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_100,000-124,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_100,000-124,999</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_125,000-149,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_125,000-149,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_125,000-149,999</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_150,000-199,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_150,000-199,999]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_150,000-199,999</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_200,000+</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_200,000+]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_200,000+</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>county</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[county]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>county</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[demog_gdf.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='%Black' datatype='real' name='[%black]' role='measure' type='quantitative' />
+      <column caption='%Hisp' datatype='real' name='[%hisp]' role='measure' type='quantitative' />
+      <column caption='%Non-White' datatype='real' name='[%non-white]' role='measure' type='quantitative' />
+      <column caption='%White' datatype='real' name='[%white]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Asian' datatype='integer' name='[asian]' role='measure' type='quantitative' />
+      <column caption='Black' datatype='integer' name='[black]' role='measure' type='quantitative' />
+      <column caption='Census Block Group' datatype='string' name='[census_block_group]' role='dimension' type='nominal' />
+      <column caption='County' datatype='string' name='[county]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Hh Income 10,000-14,999' datatype='integer' name='[hh_income_10,000-14,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 100,000-124,999' datatype='integer' name='[hh_income_100,000-124,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 125,000-149,999' datatype='integer' name='[hh_income_125,000-149,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 15,000-19,999' datatype='integer' name='[hh_income_15,000-19,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 150,000-199,999' datatype='integer' name='[hh_income_150,000-199,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 20,000-24,999' datatype='integer' name='[hh_income_20,000-24,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 200,000+' datatype='integer' name='[hh_income_200,000+]' role='measure' type='quantitative' />
+      <column caption='Hh Income 25,000-29,999' datatype='integer' name='[hh_income_25,000-29,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 30,000-34,999' datatype='integer' name='[hh_income_30,000-34,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 35,000-39,999' datatype='integer' name='[hh_income_35,000-39,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 40,000-44,999' datatype='integer' name='[hh_income_40,000-44,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 45,000-49,999' datatype='integer' name='[hh_income_45,000-49,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 50,000-59,999' datatype='integer' name='[hh_income_50,000-59,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 60,000-74,999' datatype='integer' name='[hh_income_60,000-74,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 75,000-99,999' datatype='integer' name='[hh_income_75,000-99,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income &lt;10,000' datatype='integer' name='[hh_income_&lt;10,000]' role='measure' type='quantitative' />
+      <column caption='Hispanic' datatype='integer' name='[hispanic]' role='measure' type='quantitative' />
+      <column caption='Income Per Cap' datatype='real' name='[income_per_cap]' role='measure' type='quantitative' />
+      <column caption='More Than One Race' datatype='integer' name='[more_than_one_race]' role='measure' type='quantitative' />
+      <column caption='Nat American Nat Alaskan' datatype='integer' name='[nat_american_nat_alaskan]' role='measure' type='quantitative' />
+      <column caption='Other' datatype='integer' name='[other]' role='measure' type='quantitative' />
+      <column caption='Pac Islander Nat Hawaiian' datatype='integer' name='[pac_islander_nat_hawaiian]' role='measure' type='quantitative' />
+      <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Total Block Pop' datatype='integer' name='[total_block_pop]' role='measure' type='quantitative' />
+      <column caption='White' datatype='integer' name='[white]' role='measure' type='quantitative' />
+      <drill-paths>
+        <drill-path name='state, county'>
+          <field>[state]</field>
+          <field>[county]</field>
+        </drill-path>
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.225042' measure-ordering='alphabetic' measure-percentage='0.774958' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='middle_zones_scores_gdf' inline='true' name='federated.05o7u1g0peeq4116z5fyi040dgzm' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='middle_zones_scores_gdf' name='ogrdirect.0438xa81nth6t61fhkbz51a2jqhj'>
+            <connection class='ogrdirect' directory='C:/Users/amand/Documents/NSS_Data_Analytics/GitHub/TN_Public_School_Disparities/data/final_data' filename='middle_zones_scores_gdf.geojson' ogr-grid-shift-folder='C:\Program Files\Tableau\Tableau 2020.1\local\proj4' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='ogrdirect.0438xa81nth6t61fhkbz51a2jqhj' name='middle_zones_scores_gdf.geojson' table='[middle_zones_scores_gdf.geojson]' type='table'>
+          <columns>
+            <column datatype='string' name='school' ordinal='0' />
+            <column datatype='real' name='achievement_score' ordinal='1' />
+            <column datatype='real' name='growth_score' ordinal='2' />
+            <column datatype='real' name='chronically_out_of_school_score' ordinal='3' />
+            <column datatype='spatial' name='Geometry' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>school</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school]</local-name>
+            <parent-name>[middle_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>school</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>achievement_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[achievement_score]</local-name>
+            <parent-name>[middle_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>achievement_score</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>growth_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[growth_score]</local-name>
+            <parent-name>[middle_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>growth_score</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>chronically_out_of_school_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[chronically_out_of_school_score]</local-name>
+            <parent-name>[middle_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>chronically_out_of_school_score</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[middle_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Achievement Score' datatype='real' name='[achievement_score]' role='measure' type='quantitative' />
+      <column caption='Chronically Out Of School Score' datatype='real' name='[chronically_out_of_school_score]' role='measure' type='quantitative' />
+      <column caption='Growth Score' datatype='real' name='[growth_score]' role='measure' type='quantitative' />
+      <column caption='School' datatype='string' name='[school]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.350482' measure-ordering='alphabetic' measure-percentage='0.649518' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='high_zones_scores_gdf' inline='true' name='federated.059yp4e0feyygr12fxvb20k65leh' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='high_zones_scores_gdf' name='ogrdirect.07h7yc80ob1cry10gdnwv03w8dwv'>
+            <connection class='ogrdirect' directory='C:/Users/amand/Documents/NSS_Data_Analytics/GitHub/TN_Public_School_Disparities/data/final_data' filename='high_zones_scores_gdf.geojson' ogr-grid-shift-folder='C:\Program Files\Tableau\Tableau 2020.1\local\proj4' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='ogrdirect.07h7yc80ob1cry10gdnwv03w8dwv' name='high_zones_scores_gdf.geojson' table='[high_zones_scores_gdf.geojson]' type='table'>
+          <columns>
+            <column datatype='string' name='school' ordinal='0' />
+            <column datatype='real' name='achievement_score' ordinal='1' />
+            <column datatype='real' name='growth_score' ordinal='2' />
+            <column datatype='real' name='chronically_out_of_school_score' ordinal='3' />
+            <column datatype='spatial' name='Geometry' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>school</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school]</local-name>
+            <parent-name>[high_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>school</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>achievement_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[achievement_score]</local-name>
+            <parent-name>[high_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>achievement_score</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>growth_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[growth_score]</local-name>
+            <parent-name>[high_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>growth_score</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>chronically_out_of_school_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[chronically_out_of_school_score]</local-name>
+            <parent-name>[high_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>chronically_out_of_school_score</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[high_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Achievement Score' datatype='real' name='[achievement_score]' role='measure' type='quantitative' />
+      <column caption='Chronically Out Of School Score' datatype='real' name='[chronically_out_of_school_score]' role='measure' type='quantitative' />
+      <column caption='Growth Score' datatype='real' name='[growth_score]' role='measure' type='quantitative' />
+      <column caption='School' datatype='string' name='[school]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.350482' measure-ordering='alphabetic' measure-percentage='0.649518' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='elementary_gdf' inline='true' name='federated.0buds7s1xlb0xu15xpyl11amp4ms' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='elementary_gdf' name='ogrdirect.04sforn0p7p32a16zliyp0s6wn6h'>
+            <connection class='ogrdirect' directory='C:/Users/amand/Documents/NSS_Data_Analytics/GitHub/TN_Public_School_Disparities/data/final_data' filename='elementary_gdf.geojson' ogr-grid-shift-folder='C:\Program Files\Tableau\Tableau 2020.1\local\proj4' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='ogrdirect.04sforn0p7p32a16zliyp0s6wn6h' name='elementary_gdf.geojson' table='[elementary_gdf.geojson]' type='table'>
+          <columns>
+            <column datatype='string' name='census_block_group' ordinal='0' />
+            <column datatype='real' name='income_per_cap' ordinal='1' />
+            <column datatype='integer' name='total_block_pop' ordinal='2' />
+            <column datatype='integer' name='white' ordinal='3' />
+            <column datatype='integer' name='black' ordinal='4' />
+            <column datatype='integer' name='nat_american_nat_alaskan' ordinal='5' />
+            <column datatype='integer' name='asian' ordinal='6' />
+            <column datatype='integer' name='pac_islander_nat_hawaiian' ordinal='7' />
+            <column datatype='integer' name='other' ordinal='8' />
+            <column datatype='integer' name='more_than_one_race' ordinal='9' />
+            <column datatype='integer' name='hispanic' ordinal='10' />
+            <column datatype='real' name='%white' ordinal='11' />
+            <column datatype='real' name='%black' ordinal='12' />
+            <column datatype='real' name='%hisp' ordinal='13' />
+            <column datatype='real' name='%non-white' ordinal='14' />
+            <column datatype='integer' name='hh_income_&lt;10,000' ordinal='15' />
+            <column datatype='integer' name='hh_income_10,000-14,999' ordinal='16' />
+            <column datatype='integer' name='hh_income_15,000-19,999' ordinal='17' />
+            <column datatype='integer' name='hh_income_20,000-24,999' ordinal='18' />
+            <column datatype='integer' name='hh_income_25,000-29,999' ordinal='19' />
+            <column datatype='integer' name='hh_income_30,000-34,999' ordinal='20' />
+            <column datatype='integer' name='hh_income_35,000-39,999' ordinal='21' />
+            <column datatype='integer' name='hh_income_40,000-44,999' ordinal='22' />
+            <column datatype='integer' name='hh_income_45,000-49,999' ordinal='23' />
+            <column datatype='integer' name='hh_income_50,000-59,999' ordinal='24' />
+            <column datatype='integer' name='hh_income_60,000-74,999' ordinal='25' />
+            <column datatype='integer' name='hh_income_75,000-99,999' ordinal='26' />
+            <column datatype='integer' name='hh_income_100,000-124,999' ordinal='27' />
+            <column datatype='integer' name='hh_income_125,000-149,999' ordinal='28' />
+            <column datatype='integer' name='hh_income_150,000-199,999' ordinal='29' />
+            <column datatype='integer' name='hh_income_200,000+' ordinal='30' />
+            <column datatype='string' name='state' ordinal='31' />
+            <column datatype='string' name='county' ordinal='32' />
+            <column datatype='integer' name='index_right' ordinal='33' />
+            <column datatype='string' name='school' ordinal='34' />
+            <column datatype='real' name='achievement_score' ordinal='35' />
+            <column datatype='real' name='growth_score' ordinal='36' />
+            <column datatype='real' name='chronically_out_of_school_score' ordinal='37' />
+            <column datatype='spatial' name='Geometry' ordinal='38' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>census_block_group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[census_block_group]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>census_block_group</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>income_per_cap</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[income_per_cap]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>income_per_cap</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_block_pop</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[total_block_pop]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>total_block_pop</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>white</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[white]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>white</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>black</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[black]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>black</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>nat_american_nat_alaskan</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[nat_american_nat_alaskan]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>nat_american_nat_alaskan</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>asian</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[asian]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>asian</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pac_islander_nat_hawaiian</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[pac_islander_nat_hawaiian]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>pac_islander_nat_hawaiian</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>other</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[other]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>other</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>more_than_one_race</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[more_than_one_race]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>more_than_one_race</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hispanic</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hispanic]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hispanic</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%white</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%white]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>%white</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%black</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%black]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>%black</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%hisp</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%hisp]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>%hisp</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>%non-white</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[%non-white]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>%non-white</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_&lt;10,000</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_&lt;10,000]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_&lt;10,000</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_10,000-14,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_10,000-14,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_10,000-14,999</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_15,000-19,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_15,000-19,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_15,000-19,999</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_20,000-24,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_20,000-24,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_20,000-24,999</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_25,000-29,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_25,000-29,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_25,000-29,999</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_30,000-34,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_30,000-34,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_30,000-34,999</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_35,000-39,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_35,000-39,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_35,000-39,999</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_40,000-44,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_40,000-44,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_40,000-44,999</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_45,000-49,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_45,000-49,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_45,000-49,999</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_50,000-59,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_50,000-59,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_50,000-59,999</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_60,000-74,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_60,000-74,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_60,000-74,999</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_75,000-99,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_75,000-99,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_75,000-99,999</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_100,000-124,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_100,000-124,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_100,000-124,999</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_125,000-149,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_125,000-149,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_125,000-149,999</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_150,000-199,999</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_150,000-199,999]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_150,000-199,999</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hh_income_200,000+</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[hh_income_200,000+]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>hh_income_200,000+</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>county</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[county]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>county</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>index_right</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[index_right]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>index_right</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>school</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>achievement_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[achievement_score]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>achievement_score</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>growth_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[growth_score]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>growth_score</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>chronically_out_of_school_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[chronically_out_of_school_score]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>chronically_out_of_school_score</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[elementary_gdf.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='%Black' datatype='real' name='[%black]' role='measure' type='quantitative' />
+      <column caption='%Hisp' datatype='real' name='[%hisp]' role='measure' type='quantitative' />
+      <column caption='%Non-White' datatype='real' name='[%non-white]' role='measure' type='quantitative' />
+      <column caption='%White' datatype='real' name='[%white]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Achievement Score' datatype='real' name='[achievement_score]' role='measure' type='quantitative' />
+      <column caption='Asian' datatype='integer' name='[asian]' role='measure' type='quantitative' />
+      <column caption='Black' datatype='integer' name='[black]' role='measure' type='quantitative' />
+      <column caption='Census Block Group' datatype='string' name='[census_block_group]' role='dimension' type='nominal' />
+      <column caption='Chronically Out Of School Score' datatype='real' name='[chronically_out_of_school_score]' role='measure' type='quantitative' />
+      <column caption='County' datatype='string' name='[county]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Growth Score' datatype='real' name='[growth_score]' role='measure' type='quantitative' />
+      <column caption='Hh Income 10,000-14,999' datatype='integer' name='[hh_income_10,000-14,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 100,000-124,999' datatype='integer' name='[hh_income_100,000-124,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 125,000-149,999' datatype='integer' name='[hh_income_125,000-149,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 15,000-19,999' datatype='integer' name='[hh_income_15,000-19,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 150,000-199,999' datatype='integer' name='[hh_income_150,000-199,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 20,000-24,999' datatype='integer' name='[hh_income_20,000-24,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 200,000+' datatype='integer' name='[hh_income_200,000+]' role='measure' type='quantitative' />
+      <column caption='Hh Income 25,000-29,999' datatype='integer' name='[hh_income_25,000-29,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 30,000-34,999' datatype='integer' name='[hh_income_30,000-34,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 35,000-39,999' datatype='integer' name='[hh_income_35,000-39,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 40,000-44,999' datatype='integer' name='[hh_income_40,000-44,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 45,000-49,999' datatype='integer' name='[hh_income_45,000-49,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 50,000-59,999' datatype='integer' name='[hh_income_50,000-59,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 60,000-74,999' datatype='integer' name='[hh_income_60,000-74,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income 75,000-99,999' datatype='integer' name='[hh_income_75,000-99,999]' role='measure' type='quantitative' />
+      <column caption='Hh Income &lt;10,000' datatype='integer' name='[hh_income_&lt;10,000]' role='measure' type='quantitative' />
+      <column caption='Hispanic' datatype='integer' name='[hispanic]' role='measure' type='quantitative' />
+      <column caption='Income Per Cap' datatype='real' name='[income_per_cap]' role='measure' type='quantitative' />
+      <column caption='Index Right' datatype='integer' name='[index_right]' role='measure' type='quantitative' />
+      <column caption='More Than One Race' datatype='integer' name='[more_than_one_race]' role='measure' type='quantitative' />
+      <column caption='Nat American Nat Alaskan' datatype='integer' name='[nat_american_nat_alaskan]' role='measure' type='quantitative' />
+      <column caption='Other' datatype='integer' name='[other]' role='measure' type='quantitative' />
+      <column caption='Pac Islander Nat Hawaiian' datatype='integer' name='[pac_islander_nat_hawaiian]' role='measure' type='quantitative' />
+      <column caption='School' datatype='string' name='[school]' role='dimension' type='nominal' />
+      <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Total Block Pop' datatype='integer' name='[total_block_pop]' role='measure' type='quantitative' />
+      <column caption='White' datatype='integer' name='[white]' role='measure' type='quantitative' />
+      <drill-paths>
+        <drill-path name='state, county'>
+          <field>[state]</field>
+          <field>[county]</field>
+        </drill-path>
+      </drill-paths>
+      <layout dim-ordering='alphabetic' dim-percentage='0.314721' measure-ordering='alphabetic' measure-percentage='0.685279' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='elem_schools'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='elem_zones_scores_gdf' name='federated.1p8y93b0tdn8ng13ojxi012yy595' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1p8y93b0tdn8ng13ojxi012yy595'>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[school]' derivation='None' name='[none:school:nk]' pivot='key' type='nominal' />
+            <column caption='School' datatype='string' name='[school]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1p8y93b0tdn8ng13ojxi012yy595].[none:school:nk]' />
+              <lod column='[federated.1p8y93b0tdn8ng13ojxi012yy595].[clct:Geometry:nk]' />
+              <geometry column='[federated.1p8y93b0tdn8ng13ojxi012yy595].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1p8y93b0tdn8ng13ojxi012yy595].[Latitude (generated)]</rows>
+        <cols>[federated.1p8y93b0tdn8ng13ojxi012yy595].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{03E213A9-050A-4801-A56F-A6B63A35C5F0}' />
+    </worksheet>
+    <worksheet name='elem_scores'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='elem_zones_scores_gdf' name='federated.1p8y93b0tdn8ng13ojxi012yy595' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1p8y93b0tdn8ng13ojxi012yy595'>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Achievement Score' datatype='real' name='[achievement_score]' role='measure' type='quantitative' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[achievement_score]' derivation='None' name='[none:achievement_score:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1p8y93b0tdn8ng13ojxi012yy595].[none:achievement_score:qk]' palette='blue_teal_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1p8y93b0tdn8ng13ojxi012yy595].[none:achievement_score:qk]' />
+              <lod column='[federated.1p8y93b0tdn8ng13ojxi012yy595].[clct:Geometry:nk]' />
+              <geometry column='[federated.1p8y93b0tdn8ng13ojxi012yy595].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1p8y93b0tdn8ng13ojxi012yy595].[Latitude (generated)]</rows>
+        <cols>[federated.1p8y93b0tdn8ng13ojxi012yy595].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{7277BADB-777C-4D06-8A65-ABC1019D5AB9}' />
+    </worksheet>
+    <worksheet name='high_scores'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='high_zones_scores_gdf' name='federated.059yp4e0feyygr12fxvb20k65leh' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.059yp4e0feyygr12fxvb20k65leh'>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Achievement Score' datatype='real' name='[achievement_score]' role='measure' type='quantitative' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[achievement_score]' derivation='None' name='[none:achievement_score:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.059yp4e0feyygr12fxvb20k65leh].[none:achievement_score:qk]' max='4.0' palette='blue_teal_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.059yp4e0feyygr12fxvb20k65leh].[none:achievement_score:qk]' />
+              <lod column='[federated.059yp4e0feyygr12fxvb20k65leh].[clct:Geometry:nk]' />
+              <geometry column='[federated.059yp4e0feyygr12fxvb20k65leh].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.059yp4e0feyygr12fxvb20k65leh].[Latitude (generated)]</rows>
+        <cols>[federated.059yp4e0feyygr12fxvb20k65leh].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{F9591644-6EC0-4ECB-AE85-3C82F85B80C1}' />
+    </worksheet>
+    <worksheet name='middle_schools'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='middle_zones_scores_gdf' name='federated.05o7u1g0peeq4116z5fyi040dgzm' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.05o7u1g0peeq4116z5fyi040dgzm'>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[school]' derivation='None' name='[none:school:nk]' pivot='key' type='nominal' />
+            <column caption='School' datatype='string' name='[school]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05o7u1g0peeq4116z5fyi040dgzm].[none:school:nk]' />
+              <lod column='[federated.05o7u1g0peeq4116z5fyi040dgzm].[clct:Geometry:nk]' />
+              <geometry column='[federated.05o7u1g0peeq4116z5fyi040dgzm].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.05o7u1g0peeq4116z5fyi040dgzm].[Latitude (generated)]</rows>
+        <cols>[federated.05o7u1g0peeq4116z5fyi040dgzm].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{F970AE4E-7835-45F4-8FD5-EA95AB8A8AB5}' />
+    </worksheet>
+    <worksheet name='middle_scores'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='middle_zones_scores_gdf' name='federated.05o7u1g0peeq4116z5fyi040dgzm' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.05o7u1g0peeq4116z5fyi040dgzm'>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Achievement Score' datatype='real' name='[achievement_score]' role='measure' type='quantitative' />
+            <column-instance column='[school]' derivation='Attribute' name='[attr:school:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[achievement_score]' derivation='None' name='[none:achievement_score:qk]' pivot='key' type='quantitative' />
+            <column caption='School' datatype='string' name='[school]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.05o7u1g0peeq4116z5fyi040dgzm].[none:achievement_score:qk]' palette='blue_teal_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.05o7u1g0peeq4116z5fyi040dgzm].[none:achievement_score:qk]' />
+              <lod column='[federated.05o7u1g0peeq4116z5fyi040dgzm].[clct:Geometry:nk]' />
+              <tooltip column='[federated.05o7u1g0peeq4116z5fyi040dgzm].[attr:school:nk]' />
+              <geometry column='[federated.05o7u1g0peeq4116z5fyi040dgzm].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.05o7u1g0peeq4116z5fyi040dgzm].[Latitude (generated)]</rows>
+        <cols>[federated.05o7u1g0peeq4116z5fyi040dgzm].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{24F8A8C9-201B-4D9C-882F-C55DD32B5AE5}' />
+    </worksheet>
+    <worksheet name='non_white'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='demog_gdf' name='federated.1d50h9g0p4ghwb0zn4k9305oyp0h' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1d50h9g0p4ghwb0zn4k9305oyp0h'>
+            <column caption='%Non-White' datatype='real' name='[%non-white]' role='measure' type='quantitative' />
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[%non-white]' derivation='None' name='[none:%non-white:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[none:%non-white:qk]' />
+              <lod column='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[clct:Geometry:nk]' />
+              <geometry column='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[Latitude (generated)]</rows>
+        <cols>[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{1EDAECA8-F909-4997-A6EF-15200FB846C2}' />
+    </worksheet>
+    <worksheet name='per_cap'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='demog_gdf' name='federated.1d50h9g0p4ghwb0zn4k9305oyp0h' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1d50h9g0p4ghwb0zn4k9305oyp0h'>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='Income Per Cap' datatype='real' name='[income_per_cap]' role='measure' type='quantitative' />
+            <column-instance column='[income_per_cap]' derivation='None' name='[none:income_per_cap:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[none:income_per_cap:qk]' palette='blue_teal_10_0' reverse='true' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[none:income_per_cap:qk]' />
+              <lod column='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[clct:Geometry:nk]' />
+              <geometry column='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[Latitude (generated)]</rows>
+        <cols>[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{067201E1-65B8-49EB-BAB7-5364923CF6AC}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='35125' id='3' name='elem_scores' w='26700' x='2700' y='13625' />
+        <zone h='12500' id='8' name='elem_scores' pane-specification-id='0' param='[federated.1p8y93b0tdn8ng13ojxi012yy595].[none:achievement_score:qk]' type='color' w='14000' x='3300' y='4125' />
+        <zone h='39750' id='9' name='non_white' w='41100' x='2600' y='61125' />
+        <zone h='12500' id='14' name='non_white' pane-specification-id='0' param='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[none:%non-white:qk]' type='color' w='14000' x='28500' y='61750' />
+        <zone h='33250' id='15' name='per_cap' w='33300' x='46100' y='65375' />
+        <zone h='12500' id='20' name='per_cap' pane-specification-id='0' param='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[none:income_per_cap:qk]' type='color' w='14000' x='81400' y='74625' />
+        <zone h='35375' id='21' name='middle_scores' w='36100' x='29800' y='13375' />
+        <zone h='33250' id='22' name='high_scores' w='33300' x='66500' y='14625' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1650' minheight='1650' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='24' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='23' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='35375' id='21' is-fixed='true' name='middle_scores' w='36100' x='29800' y='13375'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='35125' id='3' is-fixed='true' name='elem_scores' w='26700' x='2700' y='13625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12500' id='8' name='elem_scores' pane-specification-id='0' param='[federated.1p8y93b0tdn8ng13ojxi012yy595].[none:achievement_score:qk]' type='color' w='14000' x='3300' y='4125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='266' h='33250' id='22' is-fixed='true' name='high_scores' w='33300' x='66500' y='14625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39750' id='9' is-fixed='true' name='non_white' w='41100' x='2600' y='61125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12500' id='14' name='non_white' pane-specification-id='0' param='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[none:%non-white:qk]' type='color' w='14000' x='28500' y='61750'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='266' h='33250' id='15' is-fixed='true' name='per_cap' w='33300' x='46100' y='65375'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12500' id='20' name='per_cap' pane-specification-id='0' param='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[none:income_per_cap:qk]' type='color' w='14000' x='81400' y='74625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{7DCC5454-D33F-433B-AED3-42CF4CF04583}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='168'>
+    <window class='worksheet' name='elem_scores'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1p8y93b0tdn8ng13ojxi012yy595].[none:achievement_score:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0599AA60-B0A6-4A28-A397-B047AFB11644}' />
+    </window>
+    <window class='worksheet' name='middle_scores'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05o7u1g0peeq4116z5fyi040dgzm].[none:achievement_score:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5764C5EC-E374-4C0E-BF3F-ABBE89E5E27B}' />
+    </window>
+    <window class='worksheet' name='high_scores'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.059yp4e0feyygr12fxvb20k65leh].[none:achievement_score:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{47753305-B92C-4D40-B1B4-CC4D29304B4A}' />
+    </window>
+    <window class='worksheet' name='elem_schools'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1p8y93b0tdn8ng13ojxi012yy595].[none:school:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A01B0113-524C-46F1-9E9C-895145754CF2}' />
+    </window>
+    <window class='worksheet' name='middle_schools'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.05o7u1g0peeq4116z5fyi040dgzm].[none:school:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1CA2C6AB-B048-405B-B0B8-2405AF312327}' />
+    </window>
+    <window class='worksheet' name='non_white'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[none:%non-white:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{635F283C-2F72-4478-A3F4-12E7AD9B9CB1}' />
+    </window>
+    <window class='worksheet' name='per_cap'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1d50h9g0p4ghwb0zn4k9305oyp0h].[none:income_per_cap:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A133E39C-9F03-4F28-A17E-3671C0857F16}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='elem_scores'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='high_scores'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='middle_scores'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='non_white'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='per_cap'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{3BC4AE1A-7893-4A28-B558-0F0A21C24869}' />
+    </window>
+  </windows>
+</workbook>

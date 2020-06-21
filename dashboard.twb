@@ -20,42 +20,62 @@
           <named-connection caption='davidson_race' name='ogrdirect.1xbw1od0tujfi81au2qw01rk1iqq'>
             <connection class='ogrdirect' directory='C:/Users/amand/Documents/NSS_Data_Analytics/GitHub/TN_Public_School_Disparities/data/final_data' filename='davidson_race.geojson' ogr-grid-shift-folder='C:\Program Files\Tableau\Tableau 2020.1\local\proj4' password='' server='' tablename='' />
           </named-connection>
+          <named-connection caption='elem_zones_scores_gdf' name='ogrdirect.0k6buca0t15q6a1gxnapd0ajofbx'>
+            <connection class='ogrdirect' directory='C:/Users/amand/Documents/NSS_Data_Analytics/GitHub/TN_Public_School_Disparities/data/final_data' filename='elem_zones_scores_gdf.geojson' ogr-grid-shift-folder='C:\Program Files\Tableau\Tableau 2020.1\local\proj4' password='' server='' tablename='' />
+          </named-connection>
         </named-connections>
-        <relation join='inner' type='join'>
+        <relation join='full' type='join'>
           <clause type='join'>
             <expression op='='>
-              <expression op='[davidson_race.geojson].[census_block_group]' />
-              <expression op='[davidson_per_cap.geojson].[census_block_group]' />
+              <expression op='[davidson_race.geojson].[Geometry]' />
+              <expression op='[elem_zones_scores_gdf.geojson].[Geometry]' />
             </expression>
           </clause>
-          <relation connection='ogrdirect.1xbw1od0tujfi81au2qw01rk1iqq' name='davidson_race.geojson' table='[davidson_race.geojson]' type='table'>
-            <columns>
-              <column datatype='string' name='census_block_group' ordinal='0' />
-              <column datatype='integer' name='total_block_pop' ordinal='1' />
-              <column datatype='integer' name='white' ordinal='2' />
-              <column datatype='integer' name='black' ordinal='3' />
-              <column datatype='integer' name='native_american_/_alaskan_native' ordinal='4' />
-              <column datatype='integer' name='asian' ordinal='5' />
-              <column datatype='integer' name='pacific_islander_/_native_hawaiian' ordinal='6' />
-              <column datatype='integer' name='other' ordinal='7' />
-              <column datatype='integer' name='more_than_one_race' ordinal='8' />
-              <column datatype='integer' name='hispanic' ordinal='9' />
-              <column datatype='integer' name='hispanic - white' ordinal='10' />
-              <column datatype='real' name='%white' ordinal='11' />
-              <column datatype='real' name='%black' ordinal='12' />
-              <column datatype='real' name='%hisp' ordinal='13' />
-              <column datatype='real' name='%non-white' ordinal='14' />
-              <column datatype='string' name='state' ordinal='15' />
-              <column datatype='string' name='county' ordinal='16' />
-              <column datatype='spatial' name='Geometry' ordinal='17' />
-            </columns>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[davidson_race.geojson].[census_block_group]' />
+                <expression op='[davidson_per_cap.geojson].[census_block_group]' />
+              </expression>
+            </clause>
+            <relation connection='ogrdirect.1xbw1od0tujfi81au2qw01rk1iqq' name='davidson_race.geojson' table='[davidson_race.geojson]' type='table'>
+              <columns>
+                <column datatype='string' name='census_block_group' ordinal='0' />
+                <column datatype='integer' name='total_block_pop' ordinal='1' />
+                <column datatype='integer' name='white' ordinal='2' />
+                <column datatype='integer' name='black' ordinal='3' />
+                <column datatype='integer' name='native_american_/_alaskan_native' ordinal='4' />
+                <column datatype='integer' name='asian' ordinal='5' />
+                <column datatype='integer' name='pacific_islander_/_native_hawaiian' ordinal='6' />
+                <column datatype='integer' name='other' ordinal='7' />
+                <column datatype='integer' name='more_than_one_race' ordinal='8' />
+                <column datatype='integer' name='hispanic' ordinal='9' />
+                <column datatype='integer' name='hispanic - white' ordinal='10' />
+                <column datatype='real' name='%white' ordinal='11' />
+                <column datatype='real' name='%black' ordinal='12' />
+                <column datatype='real' name='%hisp' ordinal='13' />
+                <column datatype='real' name='%non-white' ordinal='14' />
+                <column datatype='string' name='state' ordinal='15' />
+                <column datatype='string' name='county' ordinal='16' />
+                <column datatype='spatial' name='Geometry' ordinal='17' />
+              </columns>
+            </relation>
+            <relation connection='ogrdirect.1xbw1od0tujfi81au2qw01rk1iqq' name='davidson_per_cap.geojson' table='[davidson_per_cap.geojson]' type='table'>
+              <columns>
+                <column datatype='string' name='census_block_group' ordinal='0' />
+                <column datatype='real' name='income_per_cap' ordinal='1' />
+                <column datatype='string' name='state' ordinal='2' />
+                <column datatype='string' name='county' ordinal='3' />
+                <column datatype='spatial' name='Geometry' ordinal='4' />
+              </columns>
+            </relation>
           </relation>
-          <relation connection='ogrdirect.1xbw1od0tujfi81au2qw01rk1iqq' name='davidson_per_cap.geojson' table='[davidson_per_cap.geojson]' type='table'>
+          <relation connection='ogrdirect.0k6buca0t15q6a1gxnapd0ajofbx' name='elem_zones_scores_gdf.geojson' table='[elem_zones_scores_gdf.geojson]' type='table'>
             <columns>
-              <column datatype='string' name='census_block_group' ordinal='0' />
-              <column datatype='real' name='income_per_cap' ordinal='1' />
-              <column datatype='string' name='state' ordinal='2' />
-              <column datatype='string' name='county' ordinal='3' />
+              <column datatype='string' name='school' ordinal='0' />
+              <column datatype='real' name='achievement_score' ordinal='1' />
+              <column datatype='real' name='growth_score' ordinal='2' />
+              <column datatype='real' name='chronically_out_of_school_score' ordinal='3' />
               <column datatype='spatial' name='Geometry' ordinal='4' />
             </columns>
           </relation>
@@ -66,13 +86,17 @@
           <map key='[%non-white]' value='[davidson_race.geojson].[%non-white]' />
           <map key='[%white]' value='[davidson_race.geojson].[%white]' />
           <map key='[Geometry (davidson_per_cap.geojson)]' value='[davidson_per_cap.geojson].[Geometry]' />
+          <map key='[Geometry (elem_zones_scores_gdf.geojson)]' value='[elem_zones_scores_gdf.geojson].[Geometry]' />
           <map key='[Geometry]' value='[davidson_race.geojson].[Geometry]' />
+          <map key='[achievement_score]' value='[elem_zones_scores_gdf.geojson].[achievement_score]' />
           <map key='[asian]' value='[davidson_race.geojson].[asian]' />
           <map key='[black]' value='[davidson_race.geojson].[black]' />
           <map key='[census_block_group (davidson_per_cap.geojson)]' value='[davidson_per_cap.geojson].[census_block_group]' />
           <map key='[census_block_group]' value='[davidson_race.geojson].[census_block_group]' />
+          <map key='[chronically_out_of_school_score]' value='[elem_zones_scores_gdf.geojson].[chronically_out_of_school_score]' />
           <map key='[county (davidson_per_cap.geojson)]' value='[davidson_per_cap.geojson].[county]' />
           <map key='[county]' value='[davidson_race.geojson].[county]' />
+          <map key='[growth_score]' value='[elem_zones_scores_gdf.geojson].[growth_score]' />
           <map key='[hispanic - white]' value='[davidson_race.geojson].[hispanic - white]' />
           <map key='[hispanic]' value='[davidson_race.geojson].[hispanic]' />
           <map key='[income_per_cap]' value='[davidson_per_cap.geojson].[income_per_cap]' />
@@ -80,6 +104,7 @@
           <map key='[native_american_/_alaskan_native]' value='[davidson_race.geojson].[native_american_/_alaskan_native]' />
           <map key='[other]' value='[davidson_race.geojson].[other]' />
           <map key='[pacific_islander_/_native_hawaiian]' value='[davidson_race.geojson].[pacific_islander_/_native_hawaiian]' />
+          <map key='[school]' value='[elem_zones_scores_gdf.geojson].[school]' />
           <map key='[state (davidson_per_cap.geojson)]' value='[davidson_per_cap.geojson].[state]' />
           <map key='[state]' value='[davidson_race.geojson].[state]' />
           <map key='[total_block_pop]' value='[davidson_race.geojson].[total_block_pop]' />
@@ -345,6 +370,62 @@
             <aggregation>Collect</aggregation>
             <contains-null>true</contains-null>
           </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>school</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[school]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>school</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>achievement_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[achievement_score]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>achievement_score</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>growth_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[growth_score]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>growth_score</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>chronically_out_of_school_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[chronically_out_of_school_score]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>chronically_out_of_school_score</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry (elem_zones_scores_gdf.geojson)]</local-name>
+            <parent-name>[elem_zones_scores_gdf.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
@@ -353,15 +434,19 @@
       <column caption='%Non-White' datatype='real' name='[%non-white]' role='measure' type='quantitative' />
       <column caption='%White' datatype='real' name='[%white]' role='measure' type='quantitative' />
       <column caption='Geometry (davidson per cap.geojson)' datatype='spatial' name='[Geometry (davidson_per_cap.geojson)]' role='measure' type='nominal' />
+      <column caption='Geometry (elem zones scores gdf.geojson)' datatype='spatial' name='[Geometry (elem_zones_scores_gdf.geojson)]' role='measure' type='nominal' />
       <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
         <calculation class='tableau' formula='1' />
       </column>
+      <column caption='Achievement Score' datatype='real' name='[achievement_score]' role='measure' type='quantitative' />
       <column caption='Asian' datatype='integer' name='[asian]' role='measure' type='quantitative' />
       <column caption='Black' datatype='integer' name='[black]' role='measure' type='quantitative' />
       <column caption='Census Block Group (Davidson Per Cap.Geojson)' datatype='string' name='[census_block_group (davidson_per_cap.geojson)]' role='dimension' type='nominal' />
       <column caption='Census Block Group' datatype='string' name='[census_block_group]' role='dimension' type='nominal' />
+      <column caption='Chronically Out Of School Score' datatype='real' name='[chronically_out_of_school_score]' role='measure' type='quantitative' />
       <column caption='County (Davidson Per Cap.Geojson)' datatype='string' name='[county (davidson_per_cap.geojson)]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
       <column caption='County' datatype='string' name='[county]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Growth Score' datatype='real' name='[growth_score]' role='measure' type='quantitative' />
       <column caption='Hispanic - White' datatype='integer' name='[hispanic - white]' role='measure' type='quantitative' />
       <column caption='Hispanic' datatype='integer' name='[hispanic]' role='measure' type='quantitative' />
       <column caption='Income Per Cap' datatype='real' name='[income_per_cap]' role='measure' type='quantitative' />
@@ -369,6 +454,7 @@
       <column caption='Native American / Alaskan Native' datatype='integer' name='[native_american_/_alaskan_native]' role='measure' type='quantitative' />
       <column caption='Other' datatype='integer' name='[other]' role='measure' type='quantitative' />
       <column caption='Pacific Islander / Native Hawaiian' datatype='integer' name='[pacific_islander_/_native_hawaiian]' role='measure' type='quantitative' />
+      <column caption='School' datatype='string' name='[school]' role='dimension' type='nominal' />
       <column caption='State (Davidson Per Cap.Geojson)' datatype='string' name='[state (davidson_per_cap.geojson)]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
       <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
       <column caption='Total Block Pop' datatype='integer' name='[total_block_pop]' role='measure' type='quantitative' />
@@ -379,7 +465,201 @@
           <field>[county]</field>
         </drill-path>
       </drill-paths>
-      <layout dim-ordering='alphabetic' dim-percentage='0.433566' measure-ordering='alphabetic' measure-percentage='0.566434' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.431287' measure-ordering='alphabetic' measure-percentage='0.568713' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='school_gdf' inline='true' name='federated.1el5hbi0kkjijz1b2lmkv0frdnev' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='school_gdf' name='ogrdirect.13e8x3g1yiig6n110gmos1b4pymy'>
+            <connection class='ogrdirect' directory='C:/Users/amand/Documents/NSS_Data_Analytics/GitHub/TN_Public_School_Disparities/data/final_data' filename='school_gdf.geojson' ogr-grid-shift-folder='C:\Program Files\Tableau\Tableau 2020.1\local\proj4' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='ogrdirect.13e8x3g1yiig6n110gmos1b4pymy' name='school_gdf.geojson' table='[school_gdf.geojson]' type='table'>
+          <columns>
+            <column datatype='string' name='elem_school' ordinal='0' />
+            <column datatype='real' name='elem_achievement_score' ordinal='1' />
+            <column datatype='real' name='elem_growth_score' ordinal='2' />
+            <column datatype='real' name='elem_chronically_out_of_school_score' ordinal='3' />
+            <column datatype='string' name='middle_school' ordinal='4' />
+            <column datatype='real' name='middle_achievement_score' ordinal='5' />
+            <column datatype='real' name='middle_growth_score' ordinal='6' />
+            <column datatype='real' name='middle_chronically_out_of_school_score' ordinal='7' />
+            <column datatype='string' name='high_school' ordinal='8' />
+            <column datatype='real' name='high_achievement_score' ordinal='9' />
+            <column datatype='real' name='high_growth_score' ordinal='10' />
+            <column datatype='real' name='high_chronically_out_of_school_score' ordinal='11' />
+            <column datatype='spatial' name='Geometry' ordinal='12' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>elem_school</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[elem_school]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>elem_school</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>elem_achievement_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[elem_achievement_score]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>elem_achievement_score</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>elem_growth_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[elem_growth_score]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>elem_growth_score</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>elem_chronically_out_of_school_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[elem_chronically_out_of_school_score]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>elem_chronically_out_of_school_score</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>middle_school</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[middle_school]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>middle_school</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>middle_achievement_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[middle_achievement_score]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>middle_achievement_score</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>middle_growth_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[middle_growth_score]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>middle_growth_score</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>middle_chronically_out_of_school_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[middle_chronically_out_of_school_score]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>middle_chronically_out_of_school_score</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>high_school</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[high_school]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>high_school</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>high_achievement_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[high_achievement_score]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>high_achievement_score</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>high_growth_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[high_growth_score]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>high_growth_score</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>high_chronically_out_of_school_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[high_chronically_out_of_school_score]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>high_chronically_out_of_school_score</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[school_gdf.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Elem Achievement Score' datatype='real' name='[elem_achievement_score]' role='measure' type='quantitative' />
+      <column caption='Elem Chronically Out Of School Score' datatype='real' name='[elem_chronically_out_of_school_score]' role='measure' type='quantitative' />
+      <column caption='Elem Growth Score' datatype='real' name='[elem_growth_score]' role='measure' type='quantitative' />
+      <column caption='Elem School' datatype='string' name='[elem_school]' role='dimension' type='nominal' />
+      <column caption='High Achievement Score' datatype='real' name='[high_achievement_score]' role='measure' type='quantitative' />
+      <column caption='High Chronically Out Of School Score' datatype='real' name='[high_chronically_out_of_school_score]' role='measure' type='quantitative' />
+      <column caption='High Growth Score' datatype='real' name='[high_growth_score]' role='measure' type='quantitative' />
+      <column caption='High School' datatype='string' name='[high_school]' role='dimension' type='nominal' />
+      <column caption='Middle Achievement Score' datatype='real' name='[middle_achievement_score]' role='measure' type='quantitative' />
+      <column caption='Middle Chronically Out Of School Score' datatype='real' name='[middle_chronically_out_of_school_score]' role='measure' type='quantitative' />
+      <column caption='Middle Growth Score' datatype='real' name='[middle_growth_score]' role='measure' type='quantitative' />
+      <column caption='Middle School' datatype='string' name='[middle_school]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.273392' measure-ordering='alphabetic' measure-percentage='0.726608' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
@@ -480,7 +760,7 @@
       <simple-id uuid='{C44121A7-A3AF-4136-AA2D-8DE393B335BD}' />
     </worksheet>
   </worksheets>
-  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+  <windows saved-dpi-scale-factor='1.5' source-height='75'>
     <window class='worksheet' maximized='true' name='non-white'>
       <cards>
         <edge name='left'>
